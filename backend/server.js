@@ -1,6 +1,7 @@
 const express = require('express')
 require('dotenv').config()
-const router = require('./routes/coursesRoute')
+const coursesRouter = require('./routes/coursesRoute')
+const studentsRouter = require('./routes/studentsRoute')
 const mongoose = require ('mongoose')
 
 //express app
@@ -24,5 +25,6 @@ mongoose.connect(process.env.MONGO_URI)
 app.get('/', (req, res) => {
     res.send('hello world')
 })
-app.use('/api/courses', router)
+app.use('/api/courses', coursesRouter)
+app.use('/api/students', studentsRouter)
 

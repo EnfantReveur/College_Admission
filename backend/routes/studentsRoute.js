@@ -1,23 +1,18 @@
 const express = require('express')
 const router = express.Router()
+const {
+    getStudents,
+    getStudent,
+    createStudent
+} = require('../controller/studentController')
 
-router.get('/', (req, res) =>{
-    res.json({
-        message: 'all students'})
-})
+router.get('/',getStudents)
 
-router.get('/:id', (req, res) => {
-    res.json({
-        message: 'single student'})
-})
+router.get('/:id', getStudent)
 
-router.post('/', (req, res) => {
-    res.json({
-        message: 'create student'
-    })
-})
+router.post('/', createStudent)
 
-router.patch('/:id', (rreq, res) => {
+router.patch('/:id', (req, res) => {
     res.json({
         message: ' update student'
     })

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {
-    getAllCourses,
+    courses,
     getCourse,
     createCourse,
     updateCourse,
@@ -9,7 +9,7 @@ const {
 } = require('../controller/courseController')
 
 
-router.get('/', getAllCourses)
+router.get('/', courses)
 
 router.get('/:id', getCourse)
 

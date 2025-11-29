@@ -26,7 +26,7 @@ const getStudent = async (req, res) =>{
         })
     }
 }
-
+//no validations yet
 const createStudent = async (req, res) => {
     const { firstName, middleName, lastName, gender, age, address, contactNumber, email, password } = req.body
 

@@ -13,7 +13,7 @@ const handleSubmit = async (e) => {
 
     const courses = { courseTitle, courseDescription, coursePrice}
 
-    const response = await fetch('/api/', {
+    const response = await fetch('/api/courses/', {
         method: 'POST',
         body: JSON.stringify(courses),
         headers : {

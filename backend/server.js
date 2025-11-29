@@ -24,5 +24,5 @@ mongoose.connect(process.env.MONGO_URI)
 app.get('/', (req, res) => {
     res.send('hello world')
 })
-app.use('/api', router)
+app.use('/api/courses', router)
 

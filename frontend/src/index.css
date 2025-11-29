@@ -21,6 +21,11 @@ code {
     background-color: #fff;
     padding : 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
 
 .navbar a {
@@ -32,8 +37,30 @@ code {
 
 .pages {
   max-width: 1400px;
-  margin: 0 auto;
   padding: 10px;
+  margin-left: 250px;
+  margin-top: 70px;
+}
+
+/* sidebar */
+
+.sidebar-container{
+  display: flex;
+  margin-top: 70px;
+}
+
+.sidebar{
+  width: 200px;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 120px;
+  left: 0;
+  z-index: 999;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 /* course-info */

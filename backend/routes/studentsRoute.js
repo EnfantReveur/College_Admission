@@ -3,7 +3,9 @@ const router = express.Router()
 const {
     getStudents,
     getStudent,
-    createStudent
+    createStudent,
+    updateStudent,
+    deleteStudent
 } = require('../controller/studentController')
 
 router.get('/',getStudents)
@@ -12,16 +14,8 @@ router.get('/:id', getStudent)
 
 router.post('/', createStudent)
 
-router.patch('/:id', (req, res) => {
-    res.json({
-        message: ' update student'
-    })
-})
+router.patch('/:id', updateStudent)
 
-router.delete('/:id', (req, res) => {
-    res.json({
-        message: 'delete student'
-    })
-})
+router.delete('/:id', deleteStudent)
 
 module.exports = router

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 import CoursesInfo from "../components/CoursesInfo"
+import CoursePreview from "../components/CoursePreview"
 
 function AdminPage () {
     const [courses, setCourses] = useState(null)
+    const [selectedCourse, setSelectedCourse] = useState(null)
 
 
     useEffect(() => {
@@ -24,11 +26,28 @@ function AdminPage () {
     
 
     return(
-        <div className="font-poppins py-20">
-                {courses && courses.map((course) => (
-                    <p key={course._id}><CoursesInfo course={course}/></p>
-                ))}
-            <div>Test</div>
+        <div className="flex w-full font-poppins py-25">
+            <div>
+                    {courses && courses.map((course) => (
+                        <div
+                                key={course._id}
+                                onClick={() =>setSelectedCourse(course)}
+                                className="cursor-pointer"
+                        >
+                            <CoursesInfo course={course}/> 
+                         </div>
+                    ))}
+            </div>      
+
+            <div className="flex-1">
+                <div>
+                    {selectedCourse &&(
+                        <CoursePreview course={selectedCourse}/>
+                    )}
+                </div>
+            
+            </div>              
+    
         </div>
     )
 }

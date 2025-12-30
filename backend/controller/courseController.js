@@ -73,11 +73,22 @@ const deleteCourse = async (req, res) => {
     }
 }
 
+const deleteCourses = async (req, res) => {
+    try{
+        const course = await Course.deleteMany({})
+        res.status(200).json(course)
+    }
+    catch(error){
+        return res.status(500).json({error:error.message})
+    }
+}
+
 
 module.exports = {
     courses,
     getCourse,
     createCourse,
     updateCourse,
-    deleteCourse
+    deleteCourse,
+    deleteCourses
 }

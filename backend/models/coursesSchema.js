@@ -14,7 +14,8 @@ const courseSchema = new Schema({
     coursePrice: {
         type: Number,
         required: true
-    }
+    },
+    
 },{ timestamps: true })
 
 module.exports = mongoose.model('Course', courseSchema)
